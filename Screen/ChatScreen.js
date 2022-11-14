@@ -1,5 +1,6 @@
-import React from 'react';
+import React  from "react";
 import { Text, View, StyleSheet, FlatList, TouchableOpacity, Image, TextInput } from 'react-native';
+//  Message = get all users   
 
 const Messages = [
   {
@@ -43,10 +44,9 @@ const Messages = [
       'Hey there, this is my test for a post of my social app in React Native.',
   },
 ];
-
-const MessagesScreen = ({ navigation }) => {
-  return (
-    <View style={styles.Container} >
+function ChatScreen({ navigation }) {
+    return (
+      <View style={styles.Container} >
       <View style={{ marginVertical: 30, paddingHorizontal: 20 }}>
         <TextInput
         
@@ -69,7 +69,8 @@ const MessagesScreen = ({ navigation }) => {
           data={Messages}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.Card} onPress={() => navigation.navigate('chat', { userName: item.userName })}>
+            <TouchableOpacity style={styles.Card} onPress={() => navigation.navigate('Chats')}> 
+           
               <View style={styles.UserInfo} >
                 <View style={styles.UserImgWrapper}>
                   <Image style={{ width: 50, height: 50, borderRadius: 25 }} source={item.userImg} />
@@ -87,85 +88,81 @@ const MessagesScreen = ({ navigation }) => {
         />
       </View>
     </View>
-  );
-};
-
-export default MessagesScreen;
-
-const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
-    alignItems: 'center',
-    backgroundColor: '#ffffff'
-  },
-
-  earchBar: {
-    backgroundColor: 'whitesmoke',
-    color: 'grey',
-    paddingLeft: 10,
-    borderRadius: 8,
-    height: 40,
-    marginTop: -5
-  },
-
-
-  Card: {
-    width: '100%'
-  },
-
-  UserInfo: {
-    flexDirection: 'row',
-    justifycontent: 'space-between'
-  },
-
-  UserImgWrapper: {
-    paddingtop: 15,
-    paddingbottom: 15
+    );
   }
-  ,
-  UserImg: {
-    width: '50px',
-    height: '50px',
-    borderRadius: '25px'
-  }
-  ,
-  TextSection: {
-    flexDirection: 'column',
-    justifycontent: 'center',
-    padding: 15,
-    paddingleft: 0,
-    marginleft: '10px',
-    width: 300,
-
-    borderBottomWidth: 1,
-    borderBottomColor: '#cccccc',
-  }
-  ,
-
-  UserInfoText: {
-    flexdirection: 'row',
-    justifyContent: 'space-between',
-
-  }
-
-  , UserName: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    fontFamily: 'Lato-Regular',
-  },
-
-  PostTime: {
-    fontSize: 12,
-    color: '#666',
-    fontFamily: 'Lato-Regular'
-  },
-
-  MessageText: {
-    color: '#333333'
-  }
-
-})
-
-
+  export default ChatScreen;
+  const styles = StyleSheet.create({
+    Container: {
+      flex: 1,
+      paddingLeft: 20,
+      paddingRight: 20,
+      alignItems: 'center',
+      backgroundColor: '#ffffff'
+    },
+  
+    earchBar: {
+      backgroundColor: 'whitesmoke',
+      color: 'grey',
+      paddingLeft: 10,
+      borderRadius: 8,
+      height: 40,
+      marginTop: -5
+    },
+  
+  
+    Card: {
+      width: '100%'
+    },
+  
+    UserInfo: {
+      flexDirection: 'row',
+      justifycontent: 'space-between'
+    },
+  
+    UserImgWrapper: {
+      paddingtop: 15,
+      paddingbottom: 15
+    }
+    ,
+    UserImg: {
+      width: '50px',
+      height: '50px',
+      borderRadius: '25px'
+    }
+    ,
+    TextSection: {
+      flexDirection: 'column',
+      justifycontent: 'center',
+      padding: 15,
+      paddingleft: 0,
+      marginleft: '10px',
+      width: 300,
+  
+      borderBottomWidth: 1,
+      borderBottomColor: '#cccccc',
+    }
+    ,
+  
+    UserInfoText: {
+      flexdirection: 'row',
+      justifyContent: 'space-between',
+  
+    }
+  
+    , UserName: {
+      fontSize: 14,
+      fontWeight: 'bold',
+      fontFamily: 'Lato-Regular',
+    },
+  
+    PostTime: {
+      fontSize: 12,
+      color: '#666',
+      fontFamily: 'Lato-Regular'
+    },
+  
+    MessageText: {
+      color: '#333333'
+    }
+  
+  })
