@@ -23,11 +23,11 @@ const Tabs =() => {
                     <Image source={require('../assets/home.png')}
                     resizeMode='contain'
                     style={{
-                        width:35,
-                        height:30,
+                        width:40,
+                        height:40,
                     }}
                     />
-                    <Text style={{color:focused}} >HOME</Text>
+                    {/* <Text style={{color:focused}} >HOME</Text> */}
                 </View>
 
             )
@@ -38,11 +38,11 @@ const Tabs =() => {
                     <Image source={require('../assets/chat.png')}
                     resizeMode='contain'
                     style={{
-                        width:35,
-                        height:30,
+                        width:40,
+                        height:40,
                     }}
                     />
-                    <Text style={{color:focused}} >CHAT</Text>
+                    {/* <Text style={{color:focused}} >CHAT</Text> */}
                 </View>
 
             )
@@ -54,11 +54,11 @@ const Tabs =() => {
                     <Image source={require('../assets/pluss.png')}
                     resizeMode='contain'
                     style={{
-                        width:35,
-                        height:30,
+                        width:40,
+                        height:40,
                     }}
                     />
-                    <Text style={{color:focused}} >POST</Text>
+                    {/* <Text style={{color:focused}} >POST</Text> */}
                 </View>
 
             )
@@ -70,17 +70,17 @@ const Tabs =() => {
                     <Image source={require('../assets/fav.png')}
                     resizeMode='contain'
                     style={{
-                        width:35,
-                        height:30,
+                        width:40,
+                        height:40,
                     }}
                     />
-                    <Text style={{color:focused}} >FAV</Text>
+                    {/* <Text style={{color:focused}} >FAV</Text> */}
                 </View>
 
             )
         }} 
         />
-        <Tab.Screen name="Find" component={FindScreen} options={{
+        {/* <Tab.Screen name="Find" component={FindScreen} options={{
             tabBarIcon:({focused}) => (
                 <View style={{alignItems:'center', justifyContent:'center',}}>
                     <Image source={require('../assets/cherche.png')}
@@ -95,7 +95,7 @@ const Tabs =() => {
 
             )
         }}
-        />
+        /> */}
      
         <Tab.Screen name="Profil" component={ProfilScreen} options={{
             tabBarIcon:({focused}) => (
@@ -103,11 +103,11 @@ const Tabs =() => {
                     <Image source={require('../assets/profil.png')}
                     resizeMode='contain'
                     style={{
-                        width:35,
-                        height:30,
+                        width:40,
+                        height:40,
                     }}
                     />
-                    <Text style={{color:focused}} >PROFIL</Text>
+                    {/* <Text style={{color:focused}} >PROFIL</Text> */}
                 </View>
 
             )
