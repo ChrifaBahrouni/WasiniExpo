@@ -3,7 +3,7 @@ import AppStyles from '../Styles/AppStyles';
 import InlineTextButton from '../components/InlineTextButton';
 import React from 'react';
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+// import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 export default function Login({ navigation }) {
   const background = require("../assets/background.jpg");
@@ -15,15 +15,16 @@ export default function Login({ navigation }) {
 
   let login = () => {
     if (email !== "" && password !== "") {
-      signInWithEmailAndPassword(auth, email, password)
+      auth.signInWithEmailAndPassword( email, password)
         .then((userCredential) => {
-          navigation.navigate("Home", { user: userCredential.user });
+          navigation.navigate("Main"); 
+          // , { user: userCredential.user }
           setErrorMessage("");
           setEmail("");
           setPassword("");
         })
         .catch((error) => {
-          setErrorMessage(error.message)
+          //setErrorMessage(error.message)
         });
     } else {
       setErrorMessage("Please enter an email and password");
@@ -52,11 +53,11 @@ export default function Login({ navigation }) {
           onChangeText={setPassword} />
         <View style={[AppStyles.rowContainer, AppStyles.topMargin]}>
           <Text style={AppStyles.lightText}>Don't have an account? </Text>
-          <InlineTextButton text="Sign Up" onPress={() => navigation.navigate("SignUp")} />
+          <InlineTextButton text="Sign Up" onPress={() => navigation.navigate("Signup")} />
         </View>
         <View style={[AppStyles.rowContainer, AppStyles.bottomMargin]}>
           <Text style={AppStyles.lightText}>Forgotten your password? </Text>
-          <InlineTextButton text="Reset" onPress={() => navigation.navigate("ResetPassword")} />
+          <InlineTextButton text="Reset" onPress={() => navigation.navigate("Forgot")} />
         </View>
         <Button title="Login" onPress={login} color="#f7b267" />
       </KeyboardAvoidingView>

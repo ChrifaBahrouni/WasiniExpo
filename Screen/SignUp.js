@@ -3,7 +3,7 @@ import AppStyles from '../Styles/AppStyles';
 import InlineTextButton from '../components/InlineTextButton';
 import React from 'react';
 import { auth, FireDB } from "../firebase";
-import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+// import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 function SignUp({ navigation }) {
   const background = require("../assets/background.jpg");
@@ -50,14 +50,15 @@ function SignUp({ navigation }) {
             .doc(user.uid)
             .set({
               email: email,
-              username: name
+              // username: name
               //lastName: lastName,
               //firstName: firstName,
             });
+          navigation.navigate("Main") ; 
           console.log('Registered with:', user.email);
         })
         .catch(error => alert(error.message))
-      navigation.navigate("Login")
+     
     } 
   }
 

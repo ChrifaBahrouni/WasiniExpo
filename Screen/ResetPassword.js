@@ -3,7 +3,7 @@ import AppStyles from '../Styles/AppStyles';
 import InlineTextButton from '../components/InlineTextButton';
 import React from 'react';
 import { auth } from "../firebase";
-import { sendPasswordResetEmail } from 'firebase/auth';
+// import { sendPasswordResetEmail } from 'firebase/auth';
 
 export default function ResetPassword({ navigation }) {
   const background = require("../assets/background.jpg");
@@ -12,14 +12,29 @@ export default function ResetPassword({ navigation }) {
   let [errorMessage, setErrorMessage] = React.useState("");
 
   let resetPassword = () => {
-    sendPasswordResetEmail(auth, email)
+    auth.sendPasswordResetEmail( email)
       .then(() => {
-        navigation.popToTop();
+        // navigation.popToTop();
+        alert('check your Email Please ..')
       })
       .catch((error) => {
         setErrorMessage(error.message);
       });
+      // auth.sendPasswordResetEmail(email)
+      // .then(
+      //   alert('check your Email Please ..')
+      // )
+      // .catch(error => alert(error.message))
   }
+
+  const onSubmitHandler = () => {
+ console.log(email) ; 
+    auth.sendPasswordResetEmail(email)
+    .then(
+      alert('check your Email Please ..')
+    )
+    .catch(error => alert(error.message))
+  };
 
   return (
     <ImageBackground style={AppStyles.imageContainer} source={background}>
@@ -37,7 +52,7 @@ export default function ResetPassword({ navigation }) {
           onChangeText={setEmail} />
         <View style={[AppStyles.rowContainer, AppStyles.topMargin]}>
           <Text style={AppStyles.lightText}>Don't have an account? </Text>
-          <InlineTextButton text="Sign Up" onPress={() => navigation.navigate("SignUp")} />
+          <InlineTextButton text="Sign Up" onPress={() => navigation.navigate("Signup")} />
         </View>
         <Button title="Reset Password" onPress={resetPassword} color="#f7b267" />
       </KeyboardAvoidingView>
