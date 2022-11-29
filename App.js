@@ -7,11 +7,17 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Tabs from "./navigation/Tabs";
 import Navigation from "./navigation/Navigation";
 // import 'react-native-gesture-handler'; 
+import DrawerNav from "./navigation/DrawrNAV";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-   <Navigation/>
+    //   <NavigationContainer>
+    //   <DrawerNav/>
+    //   <Navigation/>
+    // </NavigationContainer>
+    <Navigation />
+
   );
 }
 
