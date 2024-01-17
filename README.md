@@ -8,7 +8,7 @@ Une application mobile d’un  Personnal Shoppers développée avec Flutter.
 
 ## Captures d'écran
 
-<img src="captures/forget password.png"  width="250" height="400" /> <img src="captures/login.png width="250" height="400" /> <img src="captures/loginup.png"  width="250" height="400" />  
+<img src="captures/forget password.png"  width="250" height="400" /> <img src="captures/login.png" width="250" height="400" /> <img src="captures/loginup.png"  width="250" height="400" />  
 
 
 
